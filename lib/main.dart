@@ -5,7 +5,7 @@ import 'screens/categories_screen.dart';
 import 'screens/category_meals_screen.dart';
 import 'screens/meal_detail_screen.dart';
 
-// Dummy Code
+// Dummy Code to implement
 
 void main() => runApp(MyApp());
 
