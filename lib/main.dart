@@ -30,17 +30,17 @@ class MyApp extends StatelessWidget {
       home: CategoriesScreen(), //first screen to our App
       routes: {
         // "/": (_) => CategoriesScreen(),
-        //CategoryMealsScreen.screenRouteName: (_) => CategoryMealsScreen(),
-        //MealDetailScreen.screenRouteName: (_) => MealDetailScreen(),
+        CategoryMealsScreen.screenRouteName: (_) => CategoryMealsScreen(),
+        MealDetailScreen.screenRouteName: (_) => MealDetailScreen(),
       },
 
       // DEFAULT SCREEN
-      // onGenerateRoute: (settings) {
-      //   print(settings.arguments);
-      //   return MaterialPageRoute(
-      //     builder: (ctx) => CategoriesScreen(),
-      //   );
-      // },
+      onGenerateRoute: (settings) {
+        print(settings.arguments);
+        return MaterialPageRoute(
+          builder: (ctx) => CategoriesScreen(),
+        );
+      },
 
       // 404 - PAGE NOT FOUND
       onUnknownRoute: (settings) {
