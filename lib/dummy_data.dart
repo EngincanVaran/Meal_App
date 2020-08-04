@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import './Models/category.dart';
-import './Models/meal.dart';
+import './models/category.dart';
+import './models/meal.dart';
 
 enum Complexity {
   Simple,
