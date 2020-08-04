@@ -4,6 +4,7 @@ import './screens/tabs_screen.dart';
 import 'screens/categories_screen.dart';
 import 'screens/category_meals_screen.dart';
 import 'screens/meal_detail_screen.dart';
+import "screens/filters_screen.dart";
 
 // Dummy Code to implement to to
 
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'DeliMeals',
       theme: ThemeData(
         primarySwatch: Colors.pink,
+        //colorScheme: ColorScheme.fromSwatch(),
         accentColor: Colors.amber,
         canvasColor: Color.fromRGBO(255, 254, 229, 1),
         fontFamily: "Raleway",
@@ -29,26 +31,27 @@ class MyApp extends StatelessWidget {
               ),
             ),
       ),
-      //initialRoute: "/", // default is /
-      home: TabsScreen(), //first screen to our App
+      initialRoute: '/', // default is /
+      // home: TabsScreen(), //first screen to our App
       routes: {
-        // "/": (_) => CategoriesScreen(),
+        '/': (_) => TabsScreen(),
         CategoryMealsScreen.screenRouteName: (_) => CategoryMealsScreen(),
         MealDetailScreen.screenRouteName: (_) => MealDetailScreen(),
+        FiltersScreen.screenRouteName: (_) => FiltersScreen(),
       },
 
       // DEFAULT SCREEN
       onGenerateRoute: (settings) {
         print(settings.arguments);
         return MaterialPageRoute(
-          builder: (ctx) => CategoriesScreen(),
+          builder: (ctx) => TabsScreen(),
         );
       },
 
       // 404 - PAGE NOT FOUND
       onUnknownRoute: (settings) {
         return MaterialPageRoute(
-          builder: (ctx) => CategoriesScreen(),
+          builder: (ctx) => TabsScreen(),
         );
       },
     );
